@@ -1,14 +1,19 @@
 import React from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 
+import texture from '../assets/moon.jpg';
+
 import '../styles/Model.scss';
+import { TextureLoader } from 'three';
 
 function Shape() {
+  const moonTexture = useLoader(TextureLoader, texture);
+
   return (
     <mesh>
       <sphereGeometry attach='geometry' />
-      <meshLambertMaterial attach='material' color='hotpink' />
+      <meshStandardMaterial map={moonTexture} />
     </mesh>
   );
 }
