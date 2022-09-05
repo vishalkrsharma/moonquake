@@ -2,9 +2,11 @@ import React from 'react';
 
 import Model from './components/Model';
 
+import './App.scss';
+
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
       <Model />
     </div>
   );

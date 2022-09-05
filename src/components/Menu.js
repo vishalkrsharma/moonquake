@@ -1,7 +1,19 @@
 import React from 'react';
 
-function Menu() {
-  return <div className='menu'></div>;
+import '../styles/Menu.scss';
+
+function Menu({ axes, setAxes }) {
+  return (
+    <div className='menu'>
+      <button
+        onClick={() => {
+          setAxes(axes === 0 ? 10 : 0);
+        }}
+      >
+        Toggle Axes
+      </button>
+    </div>
+  );
 }
 
 export default Menu;
