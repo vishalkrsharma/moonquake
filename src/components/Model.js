@@ -22,7 +22,7 @@ function Model() {
             <ambientLight intensity={0.03} />
             <spotLight position={[10, 0, 10]} intensity={1} angle={0.5} />
             <Moon />
-            <Points />
+            {/* <Points /> */}
             <axesHelper args={[axes, 50, 50]} position={[0, 0, 0]} />
           </Suspense>
         </Canvas>
