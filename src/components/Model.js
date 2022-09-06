@@ -8,7 +8,9 @@ import Menu from "./Menu";
 import "../styles/Model.scss";
 
 function Model() {
-  const [axes, setAxes] = useState(10);
+  const [axes, setAxes] = useState(0);
+  const [spotLightIntensity, setSpotLightIntensity] = useState(50);
+  console.log(spotLightIntensity);
 
   return (
     <>
@@ -20,14 +22,26 @@ function Model() {
           <OrbitControls enableZoom={true} />
           <Suspense>
             <ambientLight intensity={0.03} />
-            <spotLight position={[10, 0, 10]} intensity={1} angle={0.5} />
+            <spotLight
+              position={[10, 0, 10]}
+              intensity={spotLightIntensity / 100}
+              angle={0.5}
+            />
             <Moon />
-            {/* <Points /> */}
+
             <axesHelper args={[axes, 50, 50]} position={[0, 0, 0]} />
           </Suspense>
         </Canvas>
+        <Canvas>
+          <Points />
+        </Canvas>
       </div>
-      <Menu axes={axes} setAxes={setAxes} />
+      <Menu
+        spotLightIntensity={spotLightIntensity}
+        setSpotLightIntensity={setSpotLightIntensity}
+        axes={axes}
+        setAxes={setAxes}
+      />
     </>
   );
 }
