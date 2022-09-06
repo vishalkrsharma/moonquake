@@ -28,6 +28,7 @@ function Model() {
               intensity={spotLightIntensity / 100}
               angle={0.5}
             />
+
             <Moon />
             <axesHelper args={[axes, 50, 50]} position={[0, 0, 0]} />
           </Suspense>
