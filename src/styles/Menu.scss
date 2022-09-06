@@ -4,3 +4,22 @@
   left: 0.5rem;
   color: #ffffff;
 }
+
+table,
+th,
+td {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #ffffff;
+  border-collapse: collapse;
+}
+
+.btn {
+  &--half {
+    width: 2.5rem;
+  }
+  padding: 0.4rem 0rem;
+  width: 5.4rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 0.5rem;
+}

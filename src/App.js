@@ -1,4 +1,5 @@
 import React from 'react';
+import '@fontsource/roboto-mono';
 
 import Model from './components/Model';
 

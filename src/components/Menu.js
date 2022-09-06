@@ -3,6 +3,12 @@ import React, { useState } from 'react';
 import '../styles/Menu.scss';
 
 function Menu({ axes, setAxes, setSpotLightIntensity, spotLightIntensity }) {
+  const spotLightIntensityLow = (e) => {
+    if (spotLightIntensity === 0) {
+      return (e.disabled = true);
+    }
+  };
+
   const [axesStatus, setAxesStatus] = useState('Off');
   return (
     <div className='menu'>
@@ -12,6 +18,7 @@ function Menu({ axes, setAxes, setSpotLightIntensity, spotLightIntensity }) {
             <td>axesHelper</td>
             <td>
               <button
+                className='btn'
                 onClick={() => {
                   setAxes(axes === 0 ? 10 : 0);
                   setAxesStatus(axesStatus === 'Off' ? 'On' : 'Off');
@@ -22,10 +29,14 @@ function Menu({ axes, setAxes, setSpotLightIntensity, spotLightIntensity }) {
             </td>
           </tr>
           <tr>
-            <td>spotLight</td>
+            <td>spotLightIntensity {spotLightIntensity}</td>
             <td>
-              <button onClick={() => setSpotLightIntensity(spotLightIntensity - 5)}>-</button>
-              <button onClick={() => setSpotLightIntensity(spotLightIntensity + 5)}>+</button>
+              <button className='btn--half btn' onClick={() => setSpotLightIntensity(spotLightIntensity - 5)} disabled={spotLightIntensity === 0}>
+                -
+              </button>
+              <button className='btn--half btn' onClick={() => setSpotLightIntensity(spotLightIntensity + 5)} disabled={spotLightIntensity === 100}>
+                +
+              </button>
             </td>
           </tr>
         </tbody>

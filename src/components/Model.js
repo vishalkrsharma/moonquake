@@ -10,6 +10,7 @@ import '../styles/Model.scss';
 function Model() {
   const [axes, setAxes] = useState(0);
   const [spotLightIntensity, setSpotLightIntensity] = useState(50);
+  console.log(spotLightIntensity);
 
   return (
     <>
