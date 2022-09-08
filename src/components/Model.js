@@ -34,11 +34,6 @@ function Model() {
           </Suspense>
         </Canvas>
       </div>
-      <div>
-        <Canvas>
-          <Points />
-        </Canvas>
-      </div>
       <Menu
         spotLightIntensity={spotLightIntensity}
         setSpotLightIntensity={setSpotLightIntensity}
