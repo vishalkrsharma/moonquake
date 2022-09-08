@@ -3,12 +3,6 @@ import React, { useState } from 'react';
 import '../styles/Menu.scss';
 
 function Menu({ axes, setAxes, setSpotLightIntensity, spotLightIntensity }) {
-  const spotLightIntensityLow = (e) => {
-    if (spotLightIntensity === 0) {
-      return (e.disabled = true);
-    }
-  };
-
   const [axesStatus, setAxesStatus] = useState('Off');
   return (
     <div className='menu'>
