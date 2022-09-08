@@ -14,7 +14,7 @@ function Space() {
 
   return (
     <>
-      <div className='model'>
+      <div className='space'>
         <Canvas className='canvas' camera={{ fov: 35, zoom: 1, near: 1, far: 1000 }}>
           <OrbitControls enableZoom={true} />
           <Suspense>
