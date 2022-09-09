@@ -18,7 +18,7 @@ function Space() {
     <>
       <div className='model'>
         <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
-          <OrbitControls enableZoom={true} />
+          <OrbitControls enableZoom={true} minDistance={3} maxDistance={6} />
           <Suspense>
             <ambientLight intensity={0.03} />
             <spotLight position={[10, 0, 10]} intensity={spotLightIntensity / 100} angle={0.5} />
