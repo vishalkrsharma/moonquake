@@ -5,12 +5,24 @@
   color: #ffffff;
 }
 
-table,
-th,
+table {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #ffffff;
+  border-collapse: collapse;
+}
+
 td {
   padding: 0.25rem 0.75rem;
   border: 1px solid #ffffff;
   border-collapse: collapse;
+}
+
+.data {
+  span {
+    position: absolute;
+    right: 0;
+  }
+  position: relative;
 }
 
 .btn {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoader } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import moon from '../assets/moon.jpg';
 
