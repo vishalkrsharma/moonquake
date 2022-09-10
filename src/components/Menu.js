@@ -36,6 +36,14 @@ function Menu({ axes, setAxes, setSpotLightIntensity, spotLightIntensity, ambien
               <button className='btn--half btn' onClick={() => setSpotLightIntensity(spotLightIntensity + 5)} disabled={spotLightIntensity === 100}>
                 +
               </button>
+              <button
+                className='btn'
+                onClick={() => {
+                  setSpotLightIntensity(50);
+                }}
+              >
+                Reset
+              </button>
             </td>
           </tr>
           <tr>
@@ -51,6 +59,14 @@ function Menu({ axes, setAxes, setSpotLightIntensity, spotLightIntensity, ambien
               </button>
               <button className='btn--half btn' onClick={() => setAmbientLightIntensity(ambientLightIntensity + 1)} disabled={ambientLightIntensity === 8}>
                 +
+              </button>
+              <button
+                className='btn'
+                onClick={() => {
+                  setAmbientLightIntensity(3);
+                }}
+              >
+                Reset
               </button>
             </td>
           </tr>
