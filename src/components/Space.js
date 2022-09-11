@@ -2,42 +2,48 @@ import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-import Menu from './Menu';
 import BackGround from './BackGround';
 import Sphere from './Sphere';
 import Moon from './Moon';
 import Wireframe from './Wireframe';
+import Info from './Info';
 
 import '../styles/Space.scss';
 
 function Space() {
   const [axes, setAxes] = useState(0);
-  const [spotLightIntensity, setSpotLightIntensity] = useState(50);
+  const [directionalLightIntensity, setDirectionalLightIntensity] = useState(50);
   const [ambientLightIntensity, setAmbientLightIntensity] = useState(3);
+  const [wireframe, setWireframe] = useState(false);
+  const [moon, setMoon] = useState(true);
 
   return (
     <>
       <div className='space'>
         <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
-          <OrbitControls enableZoom={true} minDistance={3} maxDistance={6} enablePan={false} autoRotate={false} />
+          <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={false} autoRotate={false} />
           <Suspense>
             <ambientLight intensity={ambientLightIntensity / 100} />
-            <spotLight position={[10, 0, 10]} intensity={spotLightIntensity / 100} angle={0.5} />
+            <directionalLight position={[0, 0, 10]} intensity={directionalLightIntensity / 100} angle={0.3} />
             <BackGround />
-            <Moon />
+            {moon === true ? <Moon /> : <></>}
             <Sphere />
-            <Wireframe />
+            {wireframe === true ? <Wireframe /> : <></>}
             <axesHelper args={[axes, 50, 50]} position={[0, 0, 0]} />
           </Suspense>
         </Canvas>
       </div>
-      <Menu
+      <Info
+        moon={moon}
+        setMoon={setMoon}
         axes={axes}
         setAxes={setAxes}
-        spotLightIntensity={spotLightIntensity}
-        setSpotLightIntensity={setSpotLightIntensity}
+        directionalLightIntensity={directionalLightIntensity}
+        setDirectionalLightIntensity={setDirectionalLightIntensity}
         ambientLightIntensity={ambientLightIntensity}
         setAmbientLightIntensity={setAmbientLightIntensity}
+        wireframe={wireframe}
+        setWireframe={setWireframe}
       />
     </>
   );

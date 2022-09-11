@@ -8,10 +8,10 @@ function Moon() {
 
   return (
     <>
-      <mesh rotation={[0, -Math.PI / 5, 0]}>
-        <sphereGeometry attach='geometry' args={[2, 100, 100]} />
+      <mesh>
+        <sphereGeometry attach='geometry' args={[2, 100, 100, -Math.PI / 2]} />
         <meshPhongMaterial color='black' />
-        <meshStandardMaterial map={moonTexture} />
+        <meshStandardMaterial map={moonTexture} wireframe={false} />
       </mesh>
     </>
   );
