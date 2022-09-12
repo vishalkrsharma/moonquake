@@ -1,7 +1,8 @@
 import React from 'react';
-import '@fontsource/roboto-mono';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Space from './components/Space';
+import '@fontsource/roboto-mono';
 import './App.scss';
 
 function App() {

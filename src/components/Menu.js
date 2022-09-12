@@ -81,8 +81,8 @@ function Menu(props) {
                 <input
                   type='range'
                   min={0}
-                  max={50}
-                  defaultValue={25}
+                  max={100}
+                  defaultValue={50}
                   onChange={(e) => {
                     setDirectionalLightIntensity(e.target.value);
                   }}
