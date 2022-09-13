@@ -8,6 +8,7 @@ import Moon from './Moon';
 import Wireframe from './Wireframe';
 import Info from './Info';
 import Sun from './Sun';
+import Wave from './Wave';
 
 import '../styles/Space.scss';
 
@@ -27,12 +28,14 @@ function Space() {
             <ambientLight intensity={ambientLightIntensity / 100} />
             <spotLight position={[0, 0, 0]} intensity={2} angle={Math.PI} />
             <directionalLight position={[0, 0, 100]} intensity={directionalLightIntensity / 100} angle={-0.3} />
+            <directionalLight position={[0, 10, 0]} intensity={directionalLightIntensity / 100} angle={-0.3} />
             <BackGround />
             {moon === true ? <Moon /> : <></>}
-            <Sphere />
+            {/* <Sphere /> */}
             {wireframe === true ? <Wireframe /> : <></>}
             <axesHelper args={[axes, 50, 50]} position={[0, 0, 0]} />
             <Sun />
+            <Wave />
           </Suspense>
         </Canvas>
       </div>
