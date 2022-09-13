@@ -9,6 +9,7 @@ import Info from './Info';
 import Sun from './Sun';
 import Wave from './Wave';
 import AxesHelper from './AxesHelper';
+import Lander from './Lander';
 
 import '../styles/Space.scss';
 
@@ -26,7 +27,7 @@ function Space() {
     <>
       <div className='space'>
         <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
-          <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={1000000} enablePan={true} autoRotate={false} />
+          <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={true} autoRotate={false} />
           <Suspense>
             <ambientLight intensity={ambientLightIntensity / 100} />
             <spotLight position={[0, 0, 0]} intensity={2} angle={Math.PI} />
@@ -36,6 +37,7 @@ function Space() {
             {wireframe === true ? <Wireframe /> : <></>}
             <AxesHelper axes={axes} />
             <Sun />
+            <Lander />
             <Wave />
           </Suspense>
         </Canvas>
