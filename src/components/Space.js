@@ -3,17 +3,18 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 import BackGround from './BackGround';
-import Sphere from './Sphere';
 import Moon from './Moon';
 import Wireframe from './Wireframe';
 import Info from './Info';
 import Sun from './Sun';
+import Wave from './Wave';
+import AxesHelper from './AxesHelper';
 
 import '../styles/Space.scss';
 
 function Space() {
   const [axes, setAxes] = useState(0);
-  const [directionalLightIntensity, setDirectionalLightIntensity] = useState(25);
+  const [directionalLightIntensity, setDirectionalLightIntensity] = useState(50);
   const [ambientLightIntensity, setAmbientLightIntensity] = useState(3);
   const [wireframe, setWireframe] = useState(false);
   const [moon, setMoon] = useState(true);
@@ -29,10 +30,10 @@ function Space() {
             <directionalLight position={[0, 0, 100]} intensity={directionalLightIntensity / 100} angle={-0.3} />
             <BackGround />
             {moon === true ? <Moon /> : <></>}
-            <Sphere />
             {wireframe === true ? <Wireframe /> : <></>}
-            <axesHelper args={[axes, 50, 50]} position={[0, 0, 0]} />
+            <AxesHelper axes={axes} />
             <Sun />
+            <Wave />
           </Suspense>
         </Canvas>
       </div>

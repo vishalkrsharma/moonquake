@@ -2,6 +2,7 @@ import React from 'react';
 
 import Menu from './Menu';
 import '../styles/Info.scss';
+import Timeline from './Timeline';
 
 function Info(props) {
   const {
@@ -31,6 +32,7 @@ function Info(props) {
         wireframe={wireframe}
         setWireframe={setWireframe}
       />
+      <Timeline />
     </div>
   );
 }

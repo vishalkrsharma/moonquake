@@ -38,11 +38,11 @@ function Menu(props) {
               <td className='td__info'>
                 axesHelper
                 <br />
-                &emsp;x-axis : <span className='blue'>blue</span>
+                &emsp;x-axis : <span className='orange'>orange</span>
                 <br />
-                &emsp;y-axis : <span className='orange'>orange</span>
+                &emsp;y-axis : <span className='green'>green</span>
                 <br />
-                &emsp;z-axis : <span className='green'>green</span>
+                &emsp;z-axis : <span className='blue'>blue</span>
               </td>
               <td>
                 <button
@@ -81,8 +81,8 @@ function Menu(props) {
                 <input
                   type='range'
                   min={0}
-                  max={50}
-                  defaultValue={25}
+                  max={100}
+                  defaultValue={50}
                   onChange={(e) => {
                     setDirectionalLightIntensity(e.target.value);
                   }}
