@@ -14,6 +14,8 @@ function Menu(props) {
     setAmbientLightIntensity,
     wireframe,
     setWireframe,
+    heightMap,
+    setHeightMap,
   } = props;
 
   return (
@@ -65,6 +67,19 @@ function Menu(props) {
                   }}
                 >
                   {wireframe === true ? 'On' : 'Off'}
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td className='td__info'>heightMap</td>
+              <td>
+                <button
+                  className='btn'
+                  onClick={() => {
+                    setHeightMap(!heightMap);
+                  }}
+                >
+                  {heightMap === true ? 'On' : 'Off'}
                 </button>
               </td>
             </tr>

@@ -16,6 +16,8 @@ function Info(props) {
     setAmbientLightIntensity,
     wireframe,
     setWireframe,
+    heightMap,
+    setHeightMap,
   } = props;
 
   return (
@@ -31,6 +33,8 @@ function Info(props) {
         setAmbientLightIntensity={setAmbientLightIntensity}
         wireframe={wireframe}
         setWireframe={setWireframe}
+        heightMap={heightMap}
+        setHeightMap={setHeightMap}
       />
       <Timeline />
     </div>
