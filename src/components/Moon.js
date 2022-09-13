@@ -2,15 +2,17 @@ import React from 'react';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import moon from '../assets/moon.jpg';
+import height from '../assets/height.jpg';
 
-function Moon() {
+function Moon({ heightMap }) {
   const moonTexture = useLoader(THREE.TextureLoader, moon);
+  const heightMapTexture = useLoader(THREE.TextureLoader, height);
 
   return (
     <>
       <mesh>
         <sphereGeometry attach='geometry' args={[2, 100, 100, -Math.PI / 2]} />
-        <meshStandardMaterial map={moonTexture} wireframe={false} />
+        <meshStandardMaterial map={heightMap === true ? heightMapTexture : moonTexture} wireframe={false} />
       </mesh>
     </>
   );

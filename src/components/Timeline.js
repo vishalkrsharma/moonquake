@@ -24,6 +24,13 @@ function Timeline() {
           </ul>
         </div>
       )}
+      <div className='timeline__line'>
+        <div className='timeline__line__dot'></div>
+        <div className='timeline__line__dot'></div>
+        <div className='timeline__line__dot'></div>
+        <div className='timeline__line__dot'></div>
+        <div className='timeline__line__dot'></div>
+      </div>
     </div>
   );
 }

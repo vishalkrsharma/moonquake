@@ -18,18 +18,21 @@ function Space() {
   const [ambientLightIntensity, setAmbientLightIntensity] = useState(3);
   const [wireframe, setWireframe] = useState(false);
   const [moon, setMoon] = useState(true);
+  const [heightMap, setHeightMap] = useState(false);
+
+  console.log(heightMap);
 
   return (
     <>
       <div className='space'>
         <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
-          <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={true} autoRotate={false} />
+          <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={1000000} enablePan={true} autoRotate={false} />
           <Suspense>
             <ambientLight intensity={ambientLightIntensity / 100} />
             <spotLight position={[0, 0, 0]} intensity={2} angle={Math.PI} />
             <directionalLight position={[0, 0, 100]} intensity={directionalLightIntensity / 100} angle={-0.3} />
             <BackGround />
-            {moon === true ? <Moon /> : <></>}
+            {moon === true ? <Moon heightMap={heightMap} /> : <></>}
             {wireframe === true ? <Wireframe /> : <></>}
             <AxesHelper axes={axes} />
             <Sun />
@@ -48,6 +51,8 @@ function Space() {
         setAmbientLightIntensity={setAmbientLightIntensity}
         wireframe={wireframe}
         setWireframe={setWireframe}
+        heightMap={heightMap}
+        setHeightMap={setHeightMap}
       />
     </>
   );
