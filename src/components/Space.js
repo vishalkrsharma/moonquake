@@ -21,6 +21,7 @@ function Space() {
   const [wireframe, setWireframe] = useState(false);
   const [moon, setMoon] = useState(true);
   const [heightMap, setHeightMap] = useState(false);
+  const [apolloLanders, setApolloLanders] = useState(true);
 
   const landerLocation = [
     [23, 1],
@@ -59,9 +60,10 @@ function Space() {
             <AxesHelper axes={axes} />
             <Sun />
             {/* <Lander /> */}
-            {landerLocation.map((lander, index) => {
-              return <Lander key={index} long={lander[0]} lat={lander[1]} />;
-            })}
+            {apolloLanders &&
+              landerLocation.map((lander, index) => {
+                return <Lander key={index} long={lander[0]} lat={lander[1]} />;
+              })}
             {/* <Wave /> */}
           </Suspense>
         </Canvas>
@@ -79,6 +81,8 @@ function Space() {
         setWireframe={setWireframe}
         heightMap={heightMap}
         setHeightMap={setHeightMap}
+        apolloLanders={apolloLanders}
+        setApolloLanders={setApolloLanders}
       />
     </>
   );

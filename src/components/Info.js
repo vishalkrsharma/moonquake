@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import Menu from './Menu';
-import '../styles/Info.scss';
-import Timeline from './Timeline';
+import Menu from "./Menu";
+import "../styles/Info.scss";
+import Timeline from "./Timeline";
 
 function Info(props) {
   const {
@@ -18,10 +18,12 @@ function Info(props) {
     setWireframe,
     heightMap,
     setHeightMap,
+    apolloLanders,
+    setApolloLanders,
   } = props;
 
   return (
-    <div className='info'>
+    <div className="info">
       <Menu
         moon={moon}
         setMoon={setMoon}
@@ -35,6 +37,8 @@ function Info(props) {
         setWireframe={setWireframe}
         heightMap={heightMap}
         setHeightMap={setHeightMap}
+        apolloLanders={apolloLanders}
+        setApolloLanders={setApolloLanders}
       />
       <Timeline />
     </div>

@@ -35,7 +35,8 @@ export default function Lander(props) {
       // scale={0.0003}
       scale={0.0005}
       position={[x, y, z]}
-      rotation={[Math.PI / 2, 0, 0]}
+      rotation={[Math.PI / 2 - theta, 0, -phi]}
+      castShadow={true}
     >
       <mesh
         geometry={nodes.Apollo_lunar_module.geometry}
