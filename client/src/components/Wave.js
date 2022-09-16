@@ -6,6 +6,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 
 export default function Wave(props) {
+  const { quake } = props;
+
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/wave.glb');
   const { actions } = useAnimations(animations, group);
@@ -41,7 +43,7 @@ export default function Wave(props) {
           material={materials['Material.005']}
           morphTargetDictionary={nodes.Icosphere.morphTargetDictionary}
           morphTargetInfluences={nodes.Icosphere.morphTargetInfluences}
-          scale={0.4}
+          scale={quake.magnitude}
         />
         {/* <pointLight position={[0, 1, 0]} intensity={50 / 100} angle={-0.3} /> */}
       </group>

@@ -21,7 +21,7 @@ function Space() {
   const [moon, setMoon] = useState(true);
   const [heightMap, setHeightMap] = useState(false);
   const [apolloLanders, setApolloLanders] = useState(true);
-  const [quake, setQuake] = useState();
+  const [quake, setQuake] = useState([]);
 
   const landerLocation = [
     [23, 1],
@@ -50,7 +50,7 @@ function Space() {
               landerLocation.map((lander, index) => {
                 return <Lander key={index} long={lander[0]} lat={lander[1]} />;
               })}
-            <Wave />
+            <Wave quake={quake} />
           </Suspense>
         </Canvas>
       </div>
