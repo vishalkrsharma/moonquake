@@ -28,8 +28,9 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #272727;
-  background-color: #01040c;
+  // background: #272727;
+  // background-color: #01040c;
+  background-color: #000000;
 }
 
 body {
@@ -40,4 +41,9 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+button:hover,
+Link:hover {
+  cursor: pointer;
 }

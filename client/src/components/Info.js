@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
-import Menu from "./Menu";
-import "../styles/Info.scss";
-import Timeline from "./Timeline";
+import { getData } from '../data/getData';
+import Menu from './Menu';
+import '../styles/Info.scss';
+import Timeline from './Timeline';
 
 function Info(props) {
   const {
@@ -20,10 +21,12 @@ function Info(props) {
     setHeightMap,
     apolloLanders,
     setApolloLanders,
+    quake,
+    setQuake,
   } = props;
 
   return (
-    <div className="info">
+    <div className='info'>
       <Menu
         moon={moon}
         setMoon={setMoon}
@@ -40,7 +43,7 @@ function Info(props) {
         apolloLanders={apolloLanders}
         setApolloLanders={setApolloLanders}
       />
-      <Timeline />
+      <Timeline quake={quake} setQuake={setQuake} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
-import "../styles/Menu.scss";
+import '../styles/Menu.scss';
 
 function Menu(props) {
   const {
@@ -21,95 +21,95 @@ function Menu(props) {
   } = props;
 
   return (
-    <div className="container">
-      <div className="menu">
-        <table className="table table__1">
+    <div className='container'>
+      <div className='menu'>
+        <table className='table table__1'>
           <tbody>
             <tr>
-              <td className="td__info">moon</td>
+              <td className='td__info'>moon</td>
               <td>
                 <button
-                  className="btn"
+                  className='btn'
                   onClick={() => {
                     setMoon(!moon);
                   }}
                 >
-                  {moon === true ? "On" : "Off"}
+                  {moon === true ? 'On' : 'Off'}
                 </button>
               </td>
             </tr>
             <tr>
-              <td className="td__info">
+              <td className='td__info'>
                 axesHelper
                 <br />
-                &emsp;x-axis : <span className="orange">orange</span>
+                &emsp;x-axis : <span className='orange'>orange</span>
                 <br />
-                &emsp;y-axis : <span className="green">green</span>
+                &emsp;y-axis : <span className='green'>green</span>
                 <br />
-                &emsp;z-axis : <span className="blue">blue</span>
+                &emsp;z-axis : <span className='blue'>blue</span>
               </td>
               <td>
                 <button
-                  className="btn"
+                  className='btn'
                   onClick={() => {
                     setAxes(axes === 0 ? 10 : 0);
                   }}
                 >
-                  {axes === 0 ? "Off" : "On"}
+                  {axes === 0 ? 'Off' : 'On'}
                 </button>
               </td>
             </tr>
             <tr>
-              <td className="td__info">wireframe</td>
+              <td className='td__info'>wireframe</td>
               <td>
                 <button
-                  className="btn"
+                  className='btn'
                   onClick={() => {
                     setWireframe(!wireframe);
                   }}
                 >
-                  {wireframe === true ? "On" : "Off"}
+                  {wireframe === true ? 'On' : 'Off'}
                 </button>
               </td>
             </tr>
             <tr>
-              <td className="td__info">heightMap</td>
+              <td className='td__info'>heightMap</td>
               <td>
                 <button
-                  className="btn"
+                  className='btn'
                   onClick={() => {
                     setHeightMap(!heightMap);
                   }}
                 >
-                  {heightMap === true ? "On" : "Off"}
+                  {heightMap === true ? 'On' : 'Off'}
                 </button>
               </td>
             </tr>
             <tr>
-              <td className="td__info">apolloLanders</td>
+              <td className='td__info'>apolloLanders</td>
               <td>
                 <button
-                  className="btn"
+                  className='btn'
                   onClick={() => {
                     setApolloLanders(!apolloLanders);
                   }}
                 >
-                  {apolloLanders === true ? "On" : "Off"}
+                  {apolloLanders === true ? 'On' : 'Off'}
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
-        <table className="table table__2">
+        <table className='table table__2'>
           <tbody>
             <tr>
-              <td className="td__info">
-                <div className="data">
+              <td className='td__info'>
+                <div className='data'>
                   directionalLightIntensity
                   <span>{directionalLightIntensity}</span>
                 </div>
                 <input
-                  type="range"
+                  type='range'
                   min={0}
                   max={100}
                   defaultValue={50}
@@ -120,7 +120,7 @@ function Menu(props) {
               </td>
               <td>
                 <button
-                  className="btn"
+                  className='btn'
                   onClick={() => {
                     setDirectionalLightIntensity(50);
                   }}
@@ -130,13 +130,13 @@ function Menu(props) {
               </td>
             </tr>
             <tr>
-              <td className="td__info">
-                <div className="data">
+              <td className='td__info'>
+                <div className='data'>
                   ambientLightIntensity &emsp;
                   <span>{ambientLightIntensity}</span>
                 </div>
                 <input
-                  type="range"
+                  type='range'
                   min={3}
                   max={8}
                   defaultValue={5}
@@ -147,7 +147,7 @@ function Menu(props) {
               </td>
               <td>
                 <button
-                  className="btn"
+                  className='btn'
                   onClick={() => {
                     setAmbientLightIntensity(3);
                   }}

@@ -1,7 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import axios from 'axios';
 
 import BackGround from './BackGround';
 import Moon from './Moon';
@@ -11,34 +10,18 @@ import Sun from './Sun';
 import Wave from './Wave';
 import AxesHelper from './AxesHelper';
 import Lander from './Lander';
-import { getData } from '../data/getData';
 
 import '../styles/Space.scss';
 
 function Space() {
   const [axes, setAxes] = useState(0);
   const [directionalLightIntensity, setDirectionalLightIntensity] = useState(50);
-  const [ambientLightIntensity, setAmbientLightIntensity] = useState(3);
+  const [ambientLightIntensity, setAmbientLightIntensity] = useState(5);
   const [wireframe, setWireframe] = useState(false);
   const [moon, setMoon] = useState(true);
   const [heightMap, setHeightMap] = useState(false);
   const [apolloLanders, setApolloLanders] = useState(true);
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    getData()
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [data]);
-
-  const printData = () => {
-    console.log(data);
-  };
+  const [quake, setQuake] = useState();
 
   const landerLocation = [
     [23, 1],
@@ -63,12 +46,11 @@ function Space() {
             {wireframe === true ? <Wireframe /> : <></>}
             <AxesHelper axes={axes} />
             <Sun />
-            {/* <Lander /> */}
             {apolloLanders &&
               landerLocation.map((lander, index) => {
                 return <Lander key={index} long={lander[0]} lat={lander[1]} />;
               })}
-            {/* <Wave /> */}
+            <Wave />
           </Suspense>
         </Canvas>
       </div>
@@ -87,6 +69,8 @@ function Space() {
         setHeightMap={setHeightMap}
         apolloLanders={apolloLanders}
         setApolloLanders={setApolloLanders}
+        quake={quake}
+        setQuake={setQuake}
       />
     </>
   );

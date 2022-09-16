@@ -1,36 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import '../styles/Timeline.scss';
+import { getData } from '../data/getData';
 
-function Timeline() {
-  const [yearList, setYearList] = useState([1, 2]);
-  const [displayList, setDisplayList] = useState(false);
+function Timeline(props) {
+  const { quake, setQuake } = props;
+
+  const [ind, setind] = useState();
+  const [data, setData] = useState([]);
+
+  console.log(quake);
+  useEffect(() => {
+    getData()
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const years = [1971, 1972, 1973, 1974, 1975, 1976];
+
+  const printData = () => {
+    console.log(data);
+  };
+
   return (
     <div className='timeline'>
-      <div
-        className='timeline__year'
+      <button onClick={printData}>print data</button>
+      <select>
+        {years.map((item, index) => {
+          return (
+            <option
+              key={index}
+              value={item}
+              onClick={(e) => {
+                console.log(e.value);
+                setQuake(e.value);
+              }}
+            >
+              {item}
+            </option>
+          );
+        })}
+      </select>
+      <button
         onClick={() => {
-          setDisplayList(!displayList);
+          printData();
         }}
       >
-        Year
-      </div>
-      {displayList && (
-        <div className='timeline__year-list'>
-          <ul>
-            {yearList.map((year, index) => {
-              return <li key={index}>{year}</li>;
-            })}
-          </ul>
-        </div>
-      )}
-      <div className='timeline__line'>
-        <div className='timeline__line__dot'></div>
-        <div className='timeline__line__dot'></div>
-        <div className='timeline__line__dot'></div>
-        <div className='timeline__line__dot'></div>
-        <div className='timeline__line__dot'></div>
-      </div>
+        get
+      </button>
     </div>
   );
 }
