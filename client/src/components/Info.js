@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { getData } from '../data/getData';
 import Menu from './Menu';
 import '../styles/Info.scss';
 import Timeline from './Timeline';
