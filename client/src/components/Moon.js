@@ -11,7 +11,7 @@ function Moon({ heightMap }) {
   return (
     <>
       <mesh>
-        <sphereGeometry attach='geometry' args={[2, 100, 100, -Math.PI / 2]} />
+        <sphereGeometry attach='geometry' args={[2, 50, 50, -Math.PI / 2]} />
         <meshStandardMaterial map={heightMap === true ? heightMapTexture : moonTexture} wireframe={false} />
       </mesh>
     </>

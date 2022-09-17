@@ -137,9 +137,9 @@ function Menu(props) {
                 </div>
                 <input
                   type='range'
-                  min={3}
-                  max={8}
-                  defaultValue={5}
+                  min={1}
+                  max={5}
+                  defaultValue={3}
                   onChange={(e) => {
                     setAmbientLightIntensity(e.target.value);
                   }}

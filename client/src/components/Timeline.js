@@ -6,7 +6,7 @@ import { getData } from '../data/getData';
 function Timeline(props) {
   const { quake, setQuake } = props;
   const [data, setData] = useState([]);
-  const [id, setId] = useState('');
+  // const [id, setId] = useState('');
   useEffect(() => {
     getData()
       .then((res) => {
@@ -17,12 +17,14 @@ function Timeline(props) {
       });
   }, []);
 
-  const getQuake = () => {
-    for (var i = 0; i < data.length; i++) {
-      if (data[i]._id === id) {
-        setQuake(data[i]);
+  const getQuake = (id) => {
+    data.forEach((item) => {
+      if (item._id === id) {
+        setQuake(item);
+        console.log(item);
+        console.log(id);
       }
-    }
+    });
   };
 
   const printData = () => {
@@ -31,31 +33,21 @@ function Timeline(props) {
 
   return (
     <div className='timeline'>
-      <button onClick={printData}>print fetched data data</button>
       <select
-        name=''
-        id=''
         onChange={(e) => {
-          const ob = e.target.value;
-          setId(e.target.value);
-          getQuake();
+          // setId();
+          getQuake(e.target.value);
         }}
       >
         {data.map((item, index) => {
           return (
             <option key={index} value={item._id}>
-              {item._id}
+              {`${item.latitude}, ${item.longitude}`}
             </option>
           );
         })}
       </select>
-      <button
-        onClick={() => {
-          printData();
-        }}
-      >
-        get
-      </button>
+      <button onClick={printData}>print fetched data data</button>
     </div>
   );
 }

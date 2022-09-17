@@ -7,7 +7,6 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 
 export default function Wave(props) {
   const { quake } = props;
-
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/wave.glb');
   const { actions } = useAnimations(animations, group);
@@ -16,34 +15,29 @@ export default function Wave(props) {
     actions.wave.play();
   });
 
-  //lattitude xy
-  //longitude xz
-
   const [r, setR] = useState(1.98);
-  const [theta, setTheta] = useState(Math.PI * 0);
-  const [phi, setPhi] = useState(0);
-
-  const [latitude, setlatitude] = useState(Math.PI / 2 - theta);
-  const [longitude, setlongitude] = useState(phi);
-
-  //green = z
-  //orange=y
-  //blue=x
-
-  const [x, setX] = useState(r * Math.sin(latitude) * Math.sin(longitude));
-  const [y, setY] = useState(r * Math.cos(latitude));
-  const [z, setZ] = useState(r * Math.sin(latitude) * Math.cos(longitude));
+  const degToRad = (deg) => (deg * Math.PI) / 180.0;
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name='Scene' position={[x, y, z]} rotation={[Math.PI / 2, (Math.PI / 2) * 0, (Math.PI / 2) * 0]}>
+      <group
+        name='Scene'
+        position={[
+          r * Math.sin(Math.PI / 2 - degToRad(quake.latitude)) * Math.sin(degToRad(quake.longitude)),
+
+          r * Math.cos(Math.PI / 2 - degToRad(quake.latitude)),
+
+          r * Math.sin(Math.PI / 2 - degToRad(quake.latitude)) * Math.cos(degToRad(quake.longitude)),
+        ]}
+        rotation={[Math.PI / 2 - degToRad(quake.latitude), 0, -degToRad(quake.longitude)]}
+      >
         <mesh
           name='Icosphere'
           geometry={nodes.Icosphere.geometry}
           material={materials['Material.005']}
           morphTargetDictionary={nodes.Icosphere.morphTargetDictionary}
           morphTargetInfluences={nodes.Icosphere.morphTargetInfluences}
-          scale={quake.magnitude}
+          scale={1}
         />
         {/* <pointLight position={[0, 1, 0]} intensity={50 / 100} angle={-0.3} /> */}
       </group>
