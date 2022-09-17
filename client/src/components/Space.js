@@ -16,7 +16,7 @@ import '../styles/Space.scss';
 function Space() {
   const [axes, setAxes] = useState(0);
   const [directionalLightIntensity, setDirectionalLightIntensity] = useState(50);
-  const [ambientLightIntensity, setAmbientLightIntensity] = useState(5);
+  const [ambientLightIntensity, setAmbientLightIntensity] = useState(3);
   const [wireframe, setWireframe] = useState(false);
   const [moon, setMoon] = useState(true);
   const [heightMap, setHeightMap] = useState(false);

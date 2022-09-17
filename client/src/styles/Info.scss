@@ -1,3 +1,16 @@
 .info {
+  &__back {
+    &:hover {
+      text-decoration: underline;
+    }
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    margin: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    text-decoration: none;
+  }
   position: relative;
 }

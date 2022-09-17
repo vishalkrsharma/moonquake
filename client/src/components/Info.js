@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { getData } from '../data/getData';
 import Menu from './Menu';
@@ -27,6 +28,9 @@ function Info(props) {
 
   return (
     <div className='info'>
+      <Link className='info__back' to='/'>
+        &lt;Back to Home
+      </Link>
       <Menu
         moon={moon}
         setMoon={setMoon}
