@@ -8,26 +8,29 @@ function QuakeInfo(props) {
   return (
     Object.keys(quake).length !== 0 && (
       <div className='quakeInfo'>
-        Year: {year}
-        <br />
-        Day: {day}
-        <br />
-        Time of detection(hour: minute: second): {hour}: {minute}: {seconds}
-        <br />
-        Location:
-        <br />
-        &emsp;Latitude: {latitude}
-        <br />
-        &emsp;Longitude: {longitude}
-        <br />
-        Magnitude: {magnitude}
-        <br />
-        Quake Detected by Stations:{' '}
-        {Object.keys(station).length === 0
-          ? 'None'
-          : station.map((st, index) => {
-              return st.value + ' ';
-            })}
+        <div className='quakeInfo__header'>Quake Details: </div>
+        <div className='quakeInfo__body'>
+          Year: {year}
+          <br />
+          Day: {day}
+          <br />
+          Time of detection(hour: minute: second): {hour}: {minute}: {seconds}
+          <br />
+          Location:
+          <br />
+          &emsp;Latitude: {latitude}
+          <br />
+          &emsp;Longitude: {longitude}
+          <br />
+          Magnitude: {magnitude}
+          <br />
+          Quake Detected by Stations:{' '}
+          {Object.keys(station).length === 0
+            ? 'None'
+            : station.map((st, index) => {
+                return st.value + ' ';
+              })}
+        </div>
       </div>
     )
   );
