@@ -115,7 +115,6 @@ function Menu(props) {
                   type='range'
                   min={0}
                   max={100}
-                  defaultValue={50}
                   value={directionalLightIntensity}
                   onChange={(e) => {
                     setDirectionalLightIntensity(e.target.value);
@@ -143,7 +142,6 @@ function Menu(props) {
                   type='range'
                   min={1}
                   max={5}
-                  defaultValue={3}
                   value={ambientLightIntensity}
                   onChange={(e) => {
                     setAmbientLightIntensity(e.target.value);

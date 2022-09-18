@@ -68,7 +68,6 @@ function Timeline(props) {
         className='timeline__label'
         onChange={(e) => {
           setYear(e.target.value);
-          console.log(e.target.value);
         }}
       >
         <option className='timeline__label__list' value='none' disabled hidden selected>
