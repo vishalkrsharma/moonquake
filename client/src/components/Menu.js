@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import '../styles/Menu.scss';
+import Timeline from './Timeline';
 
 function Menu(props) {
   const {
@@ -18,6 +19,8 @@ function Menu(props) {
     setHeightMap,
     apolloLanders,
     setApolloLanders,
+    quake,
+    setQuake,
   } = props;
 
   return (
@@ -112,7 +115,7 @@ function Menu(props) {
                   type='range'
                   min={0}
                   max={100}
-                  defaultValue={50}
+                  value={directionalLightIntensity}
                   onChange={(e) => {
                     setDirectionalLightIntensity(e.target.value);
                   }}
@@ -139,7 +142,7 @@ function Menu(props) {
                   type='range'
                   min={1}
                   max={5}
-                  defaultValue={3}
+                  value={ambientLightIntensity}
                   onChange={(e) => {
                     setAmbientLightIntensity(e.target.value);
                   }}
@@ -158,6 +161,7 @@ function Menu(props) {
             </tr>
           </tbody>
         </table>
+        <Timeline quake={quake} setQuake={setQuake} />
       </div>
     </div>
   );

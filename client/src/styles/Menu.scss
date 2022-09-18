@@ -1,12 +1,13 @@
 .menu {
   position: absolute;
-  top: 4rem;
+  top: 4.25rem;
   left: 0rem;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin: 0.5rem;
+  font-size: 1.25rem;
 }
 
 .table {
@@ -14,7 +15,6 @@
     tr {
       .td__info {
         padding: 10px;
-        // height: 50px;
         .data {
           margin-bottom: 10px;
         }

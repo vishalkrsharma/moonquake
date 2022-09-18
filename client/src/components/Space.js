@@ -1,15 +1,17 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { Link } from 'react-router-dom';
 import { OrbitControls } from '@react-three/drei';
 
 import BackGround from './BackGround';
 import Moon from './Moon';
 import Wireframe from './Wireframe';
-import Info from './Info';
 import Sun from './Sun';
 import Wave from './Wave';
 import AxesHelper from './AxesHelper';
 import Lander from './Lander';
+import Menu from './Menu';
+import QuakeInfo from './QuakeInfo';
 
 import '../styles/Space.scss';
 
@@ -22,6 +24,7 @@ function Space() {
   const [heightMap, setHeightMap] = useState(false);
   const [apolloLanders, setApolloLanders] = useState(true);
   const [quake, setQuake] = useState([]);
+  console.table(quake);
 
   const landerLocation = [
     [23, 1],
@@ -34,6 +37,9 @@ function Space() {
 
   return (
     <>
+      <Link className='back' to='/'>
+        &lt;Back to Home
+      </Link>
       <div className='space'>
         <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
           <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={true} autoRotate={false} />
@@ -54,7 +60,7 @@ function Space() {
           </Suspense>
         </Canvas>
       </div>
-      <Info
+      <Menu
         moon={moon}
         setMoon={setMoon}
         axes={axes}
@@ -72,6 +78,7 @@ function Space() {
         quake={quake}
         setQuake={setQuake}
       />
+      <QuakeInfo quake={quake} />
     </>
   );
 }
