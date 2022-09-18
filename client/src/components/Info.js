@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Menu from './Menu';
 import '../styles/Info.scss';
-import Timeline from './Timeline';
 
 function Info(props) {
   const {
@@ -45,8 +44,9 @@ function Info(props) {
         setHeightMap={setHeightMap}
         apolloLanders={apolloLanders}
         setApolloLanders={setApolloLanders}
+        quake={quake}
+        setQuake={setQuake}
       />
-      <Timeline quake={quake} setQuake={setQuake} />
     </div>
   );
 }

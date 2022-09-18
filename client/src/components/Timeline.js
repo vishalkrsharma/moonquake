@@ -7,6 +7,7 @@ function Timeline(props) {
   const { setQuake } = props;
   const [data, setData] = useState([]);
   const [year, setYear] = useState([]);
+  const [yearCont, setYearCont] = useState(false);
 
   const years = [1971, 1972, 1973, 1974, 1975, 1976];
 
@@ -36,6 +37,33 @@ function Timeline(props) {
 
   return (
     <div className='timeline'>
+      {/* <div
+        className='timeline__label'
+        onClick={() => {
+          setYearCont(!yearCont);
+        }}
+      >
+        Year
+        <div className='timeline__cont'>
+          {yearCont &&
+            years.map((year, index) => {
+              return (
+                <div
+                  className='timeline__cont__yr'
+                  value={year}
+                  key={index}
+                  onClick={() => {
+                    console.log(year);
+                    setYear(year);
+                  }}
+                >
+                  {year}
+                </div>
+              );
+            })}
+        </div>
+      </div> */}
+
       <select
         className='timeline__label'
         onChange={(e) => {
@@ -43,7 +71,7 @@ function Timeline(props) {
           console.log(e.target.value);
         }}
       >
-        <option className='timeline__list' value='none' disabled hidden selected>
+        <option className='timeline__label__list' value='none' disabled hidden selected>
           Year
         </option>
         {years.map((year, index) => {
@@ -60,13 +88,13 @@ function Timeline(props) {
           getQuake(e.target.value);
         }}
       >
-        <option className='timeline__list' value='none' disabled hidden selected>
+        <option className='timeline__label__list' value='none' disabled hidden selected>
           Day
         </option>
         {data.map((item, index) => {
           return (
             item.year === year && (
-              <option className='timeline__list' key={index} value={item._id}>
+              <option className='timeline__label__list' key={index} value={item._id}>
                 {item.day}
               </option>
             )

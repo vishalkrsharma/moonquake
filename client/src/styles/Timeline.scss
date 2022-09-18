@@ -1,9 +1,20 @@
 .timeline {
+  &__label {
+    flex-grow: 1;
+    background: #000000;
+    color: #ffffff;
+    height: 3.6rem;
+    border: 1px solid #ffffff;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
   position: absolute;
-  top: 38rem;
+  top: 34rem;
   left: 0;
   color: #ffffff;
   display: flex;
   gap: 0.5rem;
-  margin: 0.5rem;
+  width: 100%;
 }

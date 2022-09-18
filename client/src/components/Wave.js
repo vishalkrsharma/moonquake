@@ -38,7 +38,7 @@ export default function Wave(props) {
           material={materials['Material.005']}
           morphTargetDictionary={nodes.Icosphere.morphTargetDictionary}
           morphTargetInfluences={nodes.Icosphere.morphTargetInfluences}
-          scale={quake.magnitude / 10}
+          scale={1}
         />
         {/* <pointLight position={[0, 1, 0]} intensity={50 / 100} angle={-0.3} /> */}
       </group>
