@@ -25,8 +25,6 @@ function Timeline(props) {
     data.forEach((item) => {
       if (item._id === id) {
         setQuake(item);
-        console.log(item);
-        console.log(id);
       }
     });
   };
@@ -37,33 +35,6 @@ function Timeline(props) {
 
   return (
     <div className='timeline'>
-      {/* <div
-        className='timeline__label'
-        onClick={() => {
-          setYearCont(!yearCont);
-        }}
-      >
-        Year
-        <div className='timeline__cont'>
-          {yearCont &&
-            years.map((year, index) => {
-              return (
-                <div
-                  className='timeline__cont__yr'
-                  value={year}
-                  key={index}
-                  onClick={() => {
-                    console.log(year);
-                    setYear(year);
-                  }}
-                >
-                  {year}
-                </div>
-              );
-            })}
-        </div>
-      </div> */}
-
       <select
         className='timeline__label'
         onChange={(e) => {

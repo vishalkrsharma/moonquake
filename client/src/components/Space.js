@@ -24,7 +24,6 @@ function Space() {
   const [heightMap, setHeightMap] = useState(false);
   const [apolloLanders, setApolloLanders] = useState(true);
   const [quake, setQuake] = useState([]);
-  console.table(quake);
 
   const landerLocation = [
     [23, 1],
