@@ -26,12 +26,12 @@ function Space() {
   const [quake, setQuake] = useState([]);
 
   const landerLocation = [
-    [23, 1],
-    [-23, -3],
-    [-17, -3],
-    [4, 26],
-    [16, -9],
-    [31, 20],
+    [1, 23],
+    [-3, -23],
+    [-3, -17],
+    [26, 4],
+    [-9, 16],
+    [20, 31],
   ];
 
   return (
@@ -41,7 +41,7 @@ function Space() {
       </Link>
       <div className='space'>
         <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
-          <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={true} autoRotate={false} />
+          <OrbitControls enableZoom={true} maxDistance={6} enablePan={true} autoRotate={false} />
           <Suspense>
             <ambientLight intensity={ambientLightIntensity / 100} />
             <spotLight position={[0, 0, 0]} intensity={2} angle={Math.PI} />
@@ -53,9 +53,9 @@ function Space() {
             <Sun />
             {apolloLanders &&
               landerLocation.map((lander, index) => {
-                return <Lander key={index} long={lander[0]} lat={lander[1]} />;
+                return <Lander key={index} lat={lander[0]} long={lander[1]} />;
               })}
-            <Wave quake={quake} />
+            {/* <Wave quake={quake} /> */}
           </Suspense>
         </Canvas>
       </div>

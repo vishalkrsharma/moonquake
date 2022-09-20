@@ -30,7 +30,6 @@ export default function Wave(props) {
 
           r * Math.sin(Math.PI / 2 - degToRad(quake.latitude)) * Math.cos(degToRad(quake.longitude)),
         ]}
-        rotation={[Math.PI / 2 - degToRad(quake.latitude), 0, -degToRad(quake.longitude)]}
       >
         <mesh
           name='Icosphere'
@@ -38,9 +37,8 @@ export default function Wave(props) {
           material={materials['Material.005']}
           morphTargetDictionary={nodes.Icosphere.morphTargetDictionary}
           morphTargetInfluences={nodes.Icosphere.morphTargetInfluences}
-          scale={1}
+          scale={0.5}
         />
-        {/* <pointLight position={[0, 1, 0]} intensity={50 / 100} angle={-0.3} /> */}
       </group>
     </group>
   );
