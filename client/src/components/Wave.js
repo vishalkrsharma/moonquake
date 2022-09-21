@@ -30,6 +30,7 @@ export default function Wave(props) {
 
           r * Math.sin(Math.PI / 2 - degToRad(quake.latitude)) * Math.cos(degToRad(quake.longitude)),
         ]}
+        rotation={[Math.PI / 2 - degToRad(quake.latitude), 0, -degToRad(quake.longitude)]}
       >
         <mesh
           name='Icosphere'
