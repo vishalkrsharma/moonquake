@@ -6,6 +6,7 @@ import Home from './components/Home';
 import About from './components/About';
 import '@fontsource/roboto-mono';
 import './App.scss';
+import FirstPerson from './components/FirstPerson';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/model' element={<Space />} />
           <Route path='/about' element={<About />} />
+          <Route path='/firstPerson' element={<FirstPerson />} />
         </Routes>
       </Router>
     </div>

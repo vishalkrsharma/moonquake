@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../styles/Timeline.scss';
 import { getData } from '../data/getData';
@@ -7,7 +8,6 @@ function Timeline(props) {
   const { setQuake } = props;
   const [data, setData] = useState([]);
   const [year, setYear] = useState([]);
-  const [yearCont, setYearCont] = useState(false);
 
   const years = [1971, 1972, 1973, 1974, 1975, 1976];
 
@@ -34,45 +34,50 @@ function Timeline(props) {
   };
 
   return (
-    <div className='timeline'>
-      <select
-        className='timeline__label'
-        onChange={(e) => {
-          setYear(e.target.value);
-        }}
-      >
-        <option className='timeline__label__list' value='none' disabled hidden selected>
-          Year
-        </option>
-        {years.map((year, index) => {
-          return (
-            <option key={index} value={year}>
-              {year}
-            </option>
-          );
-        })}
-      </select>
-      <select
-        className='timeline__label'
-        onChange={(e) => {
-          getQuake(e.target.value);
-        }}
-      >
-        <option className='timeline__label__list' value='none' disabled hidden selected>
-          Day
-        </option>
-        {data.map((item, index) => {
-          return (
-            item.year === year && (
-              <option className='timeline__label__list' key={index} value={item._id}>
-                {item.day}
+    <>
+      <div className='timeline'>
+        <select
+          className='timeline__label'
+          onChange={(e) => {
+            setYear(e.target.value);
+          }}
+        >
+          <option className='timeline__label__list' value='none' disabled hidden selected>
+            Year
+          </option>
+          {years.map((year, index) => {
+            return (
+              <option key={index} value={year}>
+                {year}
               </option>
-            )
-          );
-        })}
-      </select>
-      <button onClick={printData}>data</button>
-    </div>
+            );
+          })}
+        </select>
+        <select
+          className='timeline__label'
+          onChange={(e) => {
+            getQuake(e.target.value);
+          }}
+        >
+          <option className='timeline__label__list' value='none' disabled hidden selected>
+            Day
+          </option>
+          {data.map((item, index) => {
+            return (
+              item.year === year && (
+                <option className='timeline__label__list' key={index} value={item._id}>
+                  {item.day}
+                </option>
+              )
+            );
+          })}
+        </select>
+        <button onClick={printData}>data</button>
+      </div>
+      <Link className='fpBtn' to='/firstPerson'>
+        View in First Person!
+      </Link>
+    </>
   );
 }
 
