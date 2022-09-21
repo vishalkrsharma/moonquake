@@ -23,9 +23,8 @@ export default function Lander(props) {
         r * Math.sin(Math.PI / 2 - degToRad(lat)) * Math.cos(degToRad(long)),
       ]}
       rotation={[Math.PI / 2 - degToRad(lat), 0, -degToRad(long)]}
-      castShadow={true}
     >
-      <mesh geometry={nodes.Apollo_lunar_module.geometry} material={materials['Material.001']} position={[-0.34, 0, 50.59]} />
+      <mesh geometry={nodes.Apollo_lunar_module.geometry} material={materials['Material.001']} scale={0.5} />
     </group>
   );
 }
