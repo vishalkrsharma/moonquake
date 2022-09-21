@@ -9,13 +9,7 @@ export default function Surface(props) {
   const { nodes, materials } = useGLTF('/surface.glb');
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Apollo_17.geometry}
-        material={materials['Material.001']}
-        scale={0.04}
-        position={[0, -0.61, 0]}
-        rotation={[0, Math.PI / 2 + Math.PI / 4.66, 0]}
-      />
+      <mesh geometry={nodes.Apollo_16.geometry} material={materials['Material.002']} position={[0, -7, 0]} />
     </group>
   );
 }
