@@ -12,6 +12,7 @@ import AxesHelper from './AxesHelper';
 import Lander from './Lander';
 import Menu from './Menu';
 import QuakeInfo from './QuakeInfo';
+import loader from '../assets/loader.gif';
 
 import '../styles/Space.scss';
 
@@ -40,9 +41,15 @@ function Space() {
         &lt;Back to Home
       </Link>
       <div className='space'>
-        <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
-          <OrbitControls enableZoom={true} maxDistance={6} enablePan={true} autoRotate={false} />
-          <Suspense>
+        <Suspense
+          fallback={
+            <div className='loader'>
+              <img className='loader__img' src={loader} alt='loader' />
+            </div>
+          }
+        >
+          <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
+            <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={true} autoRotate={false} />
             <ambientLight intensity={ambientLightIntensity / 100} />
             <spotLight position={[0, 0, 0]} intensity={2} angle={Math.PI} />
             <directionalLight position={[0, 0, 100]} intensity={directionalLightIntensity / 100} angle={-0.3} />
@@ -55,9 +62,9 @@ function Space() {
               landerLocation.map((lander, index) => {
                 return <Lander key={index} lat={lander[0]} long={lander[1]} />;
               })}
-            {/* <Wave quake={quake} /> */}
-          </Suspense>
-        </Canvas>
+            <Wave quake={quake} />
+          </Canvas>
+        </Suspense>
       </div>
       <Menu
         moon={moon}

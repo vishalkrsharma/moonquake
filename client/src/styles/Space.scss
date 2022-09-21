@@ -20,3 +20,15 @@
   font-size: 1.25rem;
   z-index: 1;
 }
+
+.loader {
+  &__img {
+    height: 3rem;
+    width: 3rem;
+  }
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
