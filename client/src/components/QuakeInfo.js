@@ -5,6 +5,7 @@ import '../styles/QuakeInfo.scss';
 function QuakeInfo(props) {
   const { quake } = props;
   const { day, hour, latitude, longitude, magnitude, minute, seconds, station, year } = quake;
+
   return (
     Object.keys(quake).length !== 0 && (
       <div className='quakeInfo'>

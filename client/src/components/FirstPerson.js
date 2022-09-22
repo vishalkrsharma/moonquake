@@ -18,10 +18,10 @@ function FirstPerson(props) {
   return (
     <div className='firstPerson'>
       <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
-        {/* <OrbitControls enableZoom={true} enablePan={true} autoRotate={false} /> */}
+        <OrbitControls enableZoom={true} enablePan={true} autoRotate={false} />
         {/* <ambientLight intensity={ambientLightIntensity / 100} /> */}
         {/* <spotLight position={[0, 0, 0]} intensity={2} angle={Math.PI} /> */}
-        <directionalLight position={[0, 10, 0]} intensity={2} />
+        <directionalLight position={[0, 10, 10]} intensity={2} lookAt={[0,0,0]}/>
         <axesHelper args={[10, 50, 50]} />
         <BackGround />
         <Surface />

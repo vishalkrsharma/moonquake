@@ -20,7 +20,9 @@ export default function Wave(props) {
     group.current.lookAt(0, 0, 0);
   }, []);
 
-  const r = 2;
+  const r = 1.99;
+
+  // 0.6 3.2
 
   const degToRad = (deg) => (deg * Math.PI) / 180.0;
 
@@ -41,7 +43,7 @@ export default function Wave(props) {
           material={materials['Material.005']}
           morphTargetDictionary={nodes.Icosphere.morphTargetDictionary}
           morphTargetInfluences={nodes.Icosphere.morphTargetInfluences}
-          scale={0.5}
+          scale={.1*quake.magnitude}
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>

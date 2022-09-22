@@ -6,7 +6,6 @@ import BackGround from './BackGround';
 import Moon from './Moon';
 import Navbar from './Navbar';
 import Hero from './Hero';
-import Footer from './Footer';
 
 function Home() {
   return (
@@ -24,7 +23,6 @@ function Home() {
       </div>
       <Navbar />
       <Hero />
-      {/* <Footer /> */}
     </div>
   );
 }
