@@ -26,7 +26,7 @@ function QuakeInfo(props) {
           <br />
           Quake Detected by Stations:{' '}
           {Object.keys(station).length === 0
-            ? 'None'
+            ? 'Insuffient Data'
             : station.map((st, index) => {
                 return st.value + ' ';
               })}
