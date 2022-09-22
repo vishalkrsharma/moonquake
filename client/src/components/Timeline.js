@@ -5,7 +5,7 @@ import '../styles/Timeline.scss';
 import { getData } from '../data/getData';
 
 function Timeline(props) {
-  const { setQuake } = props;
+  const { quake, setQuake } = props;
   const [data, setData] = useState([]);
   const [year, setYear] = useState([]);
 
@@ -74,7 +74,7 @@ function Timeline(props) {
         </select>
         <button onClick={printData}>data</button>
       </div>
-      <Link className='fpBtn' to='/firstPerson'>
+      <Link className='fpBtn' to='/firstPerson' quake={quake}>
         View in First Person!
       </Link>
     </>
