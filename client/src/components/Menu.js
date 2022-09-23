@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/Menu.scss';
 import Timeline from './Timeline';
 
+
 function Menu(props) {
   const {
     moon,
@@ -161,6 +162,7 @@ function Menu(props) {
         </tbody>
       </table>
       <Timeline quake={quake} setQuake={setQuake} />
+      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Link } from 'react-router-dom';
-import { OrbitControls, OrthographicCamera } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 
 import BackGround from './BackGround';
 import Moon from './Moon';
@@ -13,6 +13,7 @@ import Lander from './Lander';
 import Menu from './Menu';
 import QuakeInfo from './QuakeInfo';
 import loader from '../assets/loader.gif';
+import Legend from './Legend'
 
 import '../styles/Space.scss';
 
@@ -85,6 +86,7 @@ function Space() {
         setQuake={setQuake}
       />
       <QuakeInfo quake={quake} />
+      { heightMap &&<Legend />}
     </>
   );
 }
