@@ -56,7 +56,7 @@ function Space() {
             <directionalLight position={[0, 0, 100]} intensity={directionalLightIntensity / 100} angle={-0.3} />
             <BackGround />
             {moon === true ? <Moon heightMap={heightMap} /> : <></>}
-            {wireframe === true ? <Wireframe /> : <></>}
+            {wireframe && <Wireframe /> }
             <AxesHelper axes={axes} />
             <Sun />
             {apolloLanders &&
