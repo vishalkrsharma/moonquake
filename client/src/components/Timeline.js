@@ -40,6 +40,7 @@ function Timeline(props) {
           className='timeline__label'
           onChange={(e) => {
             setYear(e.target.value);
+            setQuake({});
           }}
         >
           <option className='timeline__label__list' value='none' disabled hidden selected>
@@ -59,7 +60,7 @@ function Timeline(props) {
             getQuake(e.target.value);
           }}
         >
-          <option className='timeline__label__list' value='none' disabled hidden selected>
+          <option className='timeline__label__list' value='none' hidden selected>
             Day
           </option>
           {data.map((item, index) => {
