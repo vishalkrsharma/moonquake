@@ -5,13 +5,13 @@
   &__img {
     height: 25rem;
     position: absolute;
-    right: .5rem;
-    margin: .25rem;
-    filter: brightness(.8);
+    right: 0.5rem;
+    margin: 0.25rem;
+    filter: brightness(0.8);
   }
   &__top {
     position: absolute;
-    top: -.5rem;
+    top: -0.5rem;
     left: 0;
   }
   &__bottom {
@@ -25,7 +25,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: .5rem;
+  margin: 0.5rem;
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
   color: #ffffff;
