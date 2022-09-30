@@ -31,9 +31,11 @@ export default function Lander(props) {
         r * Math.sin(Math.PI / 2 - degToRad(lat)) * Math.cos(degToRad(long)),
       ]}
     >
-      <Html distanceFactor={10}>
-        <div className='info'>{name}</div>
-      </Html>
+      <mesh>
+        <Html distanceFactor={10}>
+          <div className='info'>{name}</div>
+        </Html>
+      </mesh>
     </group>
   );
 }

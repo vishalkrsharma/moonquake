@@ -23,6 +23,7 @@ function Menu(props) {
     setQuake,
     places,
     setPlaces,
+    setCamera,
   } = props;
 
   return (
@@ -30,7 +31,7 @@ function Menu(props) {
       <table className='table table__1'>
         <tbody>
           <tr>
-            <td className='td__info'>moon</td>
+            <td className='td__info'>Moon</td>
             <td>
               <button
                 className='btn'
@@ -44,7 +45,7 @@ function Menu(props) {
           </tr>
           <tr>
             <td className='td__info'>
-              axesHelper
+              World Axes
               <br />
               &emsp;x-axis : <span className='orange'>orange</span>
               <br />
@@ -64,7 +65,7 @@ function Menu(props) {
             </td>
           </tr>
           <tr>
-            <td className='td__info'>wireframe</td>
+            <td className='td__info'>Latitude & Longitude</td>
             <td>
               <button
                 className='btn'
@@ -77,7 +78,7 @@ function Menu(props) {
             </td>
           </tr>
           <tr>
-            <td className='td__info'>heightMap</td>
+            <td className='td__info'>Height Map</td>
             <td>
               <button
                 className='btn'
@@ -90,7 +91,7 @@ function Menu(props) {
             </td>
           </tr>
           <tr>
-            <td className='td__info'>apolloLanders</td>
+            <td className='td__info'>Apollo Landers</td>
             <td>
               <button
                 className='btn'
@@ -103,7 +104,7 @@ function Menu(props) {
             </td>
           </tr>
           <tr>
-            <td className='td__info'>places</td>
+            <td className='td__info'>Seas & Oceans</td>
             <td>
               <button
                 className='btn'
@@ -122,7 +123,7 @@ function Menu(props) {
           <tr>
             <td className='td__info'>
               <div className='data'>
-                directionalLightIntensity
+                Directional Light Intensity
                 <span>{directionalLightIntensity}</span>
               </div>
               <input
@@ -149,7 +150,7 @@ function Menu(props) {
           <tr>
             <td className='td__info'>
               <div className='data'>
-                ambientLightIntensity &emsp;
+                Ambient Light Intensity &emsp;
                 <span>{ambientLightIntensity}</span>
               </div>
               <input
@@ -175,7 +176,7 @@ function Menu(props) {
           </tr>
         </tbody>
       </table>
-      <Timeline quake={quake} setQuake={setQuake} />
+      <Timeline quake={quake} setQuake={setQuake} setCamera={setCamera} />
     </div>
   );
 }

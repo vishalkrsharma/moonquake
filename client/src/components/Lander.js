@@ -26,7 +26,7 @@ export default function Lander(props) {
       ref={group}
       {...props}
       dispose={null}
-      scale={0.000375}
+      scale={0.0005}
       position={[
         r * Math.sin(Math.PI / 2 - degToRad(lat)) * Math.sin(degToRad(long)),
         r * Math.cos(Math.PI / 2 - degToRad(lat)),

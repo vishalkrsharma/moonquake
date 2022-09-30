@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Link } from 'react-router-dom';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 
 import BackGround from './BackGround';
 import Moon from './Moon';
@@ -25,9 +25,10 @@ function Space() {
   const [wireframe, setWireframe] = useState(false);
   const [moon, setMoon] = useState(true);
   const [heightMap, setHeightMap] = useState(false);
-  const [apolloLanders, setApolloLanders] = useState(true);
+  const [apolloLanders, setApolloLanders] = useState(false);
   const [quake, setQuake] = useState([]);
   const [places, setPlaces] = useState(false);
+  const [camera, setCamera] = useState([0, 0, 6]);
 
   const landerLocation = [
     [1, 23, 11],
@@ -53,6 +54,8 @@ function Space() {
     [16.4, -59.4, 'Oceanus Procellarum'],
   ];
 
+  const degToRad = (deg) => (deg * Math.PI) / 180.0;
+
   return (
     <>
       <Link className='back' to='/'>
@@ -66,7 +69,18 @@ function Space() {
             </div>
           }
         >
-          <Canvas className='canvas' camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}>
+          <Canvas
+            className='canvas'
+            // camera={{
+            //   fov: 35,
+            //   zoom: 0.5,
+            //   near: 1,
+            //   far: 1000,
+            //   aspect: 1.77,
+            // }}
+          >
+            <PerspectiveCamera makeDefault position={camera} />
+
             <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={true} autoRotate={false} />
             <ambientLight intensity={ambientLightIntensity / 100} />
             <spotLight position={[0, 0, 0]} intensity={2} angle={Math.PI} />
@@ -107,6 +121,7 @@ function Space() {
         setQuake={setQuake}
         places={places}
         setPlaces={setPlaces}
+        setCamera={setCamera}
       />
       <QuakeInfo quake={quake} />
       {heightMap && <Legend />}

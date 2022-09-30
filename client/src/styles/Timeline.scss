@@ -1,6 +1,6 @@
 .timeline {
   &__label {
-    flex-grow: 1;
+    flex-grow: 100;
     background: #000000;
     color: #ffffff;
     height: 3.6rem;
@@ -12,10 +12,12 @@
   }
 
   position: absolute;
-  top: 39.5rem;
+  top: 39.25rem;
   left: 0;
   color: #ffffff;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 0.5rem;
   width: 100%;
   font-size: 1.25rem;
@@ -26,7 +28,7 @@
     text-decoration: underline;
   }
   position: absolute;
-  top: 43.5rem;
+  top: 43.25rem;
   color: #ffffff;
   text-decoration: none;
   border: 1px solid #ffffff;
@@ -40,4 +42,9 @@
   .fpBtn {
     top: 45.5rem;
   }
+}
+
+.mop {
+  border: 1px solid #ffffff;
+  padding: 1rem 0.88rem;
 }

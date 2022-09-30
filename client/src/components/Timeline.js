@@ -5,7 +5,7 @@ import '../styles/Timeline.scss';
 import { getData } from '../data/getData';
 
 function Timeline(props) {
-  const { quake, setQuake } = props;
+  const { quake, setQuake, setCamera } = props;
   const [data, setData] = useState([]);
   const [year, setYear] = useState([]);
 
@@ -28,6 +28,8 @@ function Timeline(props) {
       }
     });
   };
+
+  const degToRad = (deg) => (deg * Math.PI) / 180.0;
 
   const printData = () => {
     console.log(data);
@@ -73,7 +75,21 @@ function Timeline(props) {
             );
           })}
         </select>
-        <button onClick={printData}>data</button>
+        {/* <button onClick={printData}>data</button> */}
+        <div
+          className='mop'
+          onClick={() => {
+            console.log('click');
+            setCamera([
+              6 * Math.sin(Math.PI / 2 - degToRad(quake.latitude)) * Math.sin(degToRad(quake.longitude)),
+              6 * Math.cos(Math.PI / 2 - degToRad(quake.latitude)),
+              6 * Math.sin(Math.PI / 2 - degToRad(quake.latitude)) * Math.cos(degToRad(quake.longitude)),
+            ]);
+          }}
+          style={{ marginLeft: '10rem', zIndex: '100' }}
+        >
+          Move Cam
+        </div>
       </div>
       <Link className='fpBtn' to='/firstPerson' quake={quake}>
         View in First Person!
