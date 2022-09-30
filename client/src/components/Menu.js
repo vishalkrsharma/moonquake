@@ -3,7 +3,6 @@ import React from 'react';
 import '../styles/Menu.scss';
 import Timeline from './Timeline';
 
-
 function Menu(props) {
   const {
     moon,
@@ -22,6 +21,8 @@ function Menu(props) {
     setApolloLanders,
     quake,
     setQuake,
+    places,
+    setPlaces,
   } = props;
 
   return (
@@ -101,6 +102,19 @@ function Menu(props) {
               </button>
             </td>
           </tr>
+          <tr>
+            <td className='td__info'>places</td>
+            <td>
+              <button
+                className='btn'
+                onClick={() => {
+                  setPlaces(!places);
+                }}
+              >
+                {places === true ? 'On' : 'Off'}
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
       <table className='table table__2'>
@@ -162,7 +176,6 @@ function Menu(props) {
         </tbody>
       </table>
       <Timeline quake={quake} setQuake={setQuake} />
-      
     </div>
   );
 }

@@ -14,6 +14,7 @@ import Menu from './Menu';
 import QuakeInfo from './QuakeInfo';
 import loader from '../assets/loader.gif';
 import Legend from './Legend';
+import Places from './Places';
 
 import '../styles/Space.scss';
 
@@ -26,6 +27,7 @@ function Space() {
   const [heightMap, setHeightMap] = useState(false);
   const [apolloLanders, setApolloLanders] = useState(true);
   const [quake, setQuake] = useState([]);
+  const [places, setPlaces] = useState(false);
 
   const landerLocation = [
     [1, 23, 11],
@@ -34,6 +36,21 @@ function Space() {
     [26, 4, 15],
     [-9, 16, 16],
     [20, 31, 17],
+  ];
+
+  const placesLocation = [
+    [10, 23.43, 'Mare Tranquillitatis'],
+    [38.28, -20, 'Mare Imbrium'],
+    [15, 3.6, 'Mare Vaporum'],
+    [8.5, -30.9, 'Mare Insularum'],
+    [30, 12.5, 'Mare Serenitatis'],
+    [20, 55.1, 'Mare Crisium'],
+    [-18.3, -19.6, 'Mare Nubium'],
+    [-10.2, 30.6, 'Mare Nectaris'],
+    [-0.8, 45.3, 'Mare Fecunditatis'],
+    [-20.4, -43.6, 'Mare Humorum'],
+    [-7.5, -26.3, 'Mare Cognitum'],
+    [16.4, -59.4, 'Oceanus Procellarum'],
   ];
 
   return (
@@ -64,6 +81,10 @@ function Space() {
                 return <Lander key={index} lat={lander[0]} long={lander[1]} num={lander[2]} />;
               })}
             <Wave quake={quake} />
+            {places &&
+              placesLocation.map((place, index) => {
+                return <Places key={index} lat={place[0]} long={place[1]} name={place[2]} />;
+              })}
           </Canvas>
         </Suspense>
       </div>
@@ -84,6 +105,8 @@ function Space() {
         setApolloLanders={setApolloLanders}
         quake={quake}
         setQuake={setQuake}
+        places={places}
+        setPlaces={setPlaces}
       />
       <QuakeInfo quake={quake} />
       {heightMap && <Legend />}

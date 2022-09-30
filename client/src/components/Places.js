@@ -11,7 +11,7 @@ import '../styles/Lander.scss';
 export default function Lander(props) {
   const group = useRef();
 
-  const { lat, long, num } = props;
+  const { lat, long, name } = props;
   const degToRad = (deg) => (deg * Math.PI) / 180.0;
 
   useFrame(() => {
@@ -20,22 +20,19 @@ export default function Lander(props) {
 
   const r = 2;
 
-  const { nodes, materials } = useGLTF('/lander.glb');
   return (
     <group
       ref={group}
       {...props}
       dispose={null}
-      scale={0.000375}
       position={[
         r * Math.sin(Math.PI / 2 - degToRad(lat)) * Math.sin(degToRad(long)),
         r * Math.cos(Math.PI / 2 - degToRad(lat)),
         r * Math.sin(Math.PI / 2 - degToRad(lat)) * Math.cos(degToRad(long)),
       ]}
     >
-      <mesh geometry={nodes.Apollo_lunar_module.geometry} material={materials['Material.001']} rotation={[-Math.PI / 2, 0, 0]} />
       <Html distanceFactor={10}>
-        <div className='info'>{num}</div>
+        <div className='info'>{name}</div>
       </Html>
     </group>
   );
