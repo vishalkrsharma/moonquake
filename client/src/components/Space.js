@@ -54,8 +54,6 @@ function Space() {
     [16.4, -59.4, 'Oceanus Procellarum'],
   ];
 
-  const degToRad = (deg) => (deg * Math.PI) / 180.0;
-
   return (
     <>
       <Link className='back' to='/'>
@@ -69,16 +67,7 @@ function Space() {
             </div>
           }
         >
-          <Canvas
-            className='canvas'
-            // camera={{
-            //   fov: 35,
-            //   zoom: 0.5,
-            //   near: 1,
-            //   far: 1000,
-            //   aspect: 1.77,
-            // }}
-          >
+          <Canvas className='canvas'>
             <PerspectiveCamera makeDefault position={camera} />
 
             <OrbitControls enableZoom={true} minDistance={3.2} maxDistance={6} enablePan={true} autoRotate={false} />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import '../styles/Timeline.scss';
 import { getData } from '../data/getData';
@@ -30,10 +29,6 @@ function Timeline(props) {
   };
 
   const degToRad = (deg) => (deg * Math.PI) / 180.0;
-
-  const printData = () => {
-    console.log(data);
-  };
 
   return (
     <>
@@ -75,7 +70,6 @@ function Timeline(props) {
             );
           })}
         </select>
-        {/* <button onClick={printData}>data</button> */}
         <div
           className='mop'
           onClick={() => {
@@ -90,9 +84,9 @@ function Timeline(props) {
           Move Cam
         </div>
       </div>
-      <Link className='fpBtn' to='/firstPerson' quake={quake}>
+      <a target='_blank' rel='noreferrer' className='fpBtn' href='https://cucumburr.itch.io/moonquake-simulator'>
         View in First Person!
-      </Link>
+      </a>
     </>
   );
 }
