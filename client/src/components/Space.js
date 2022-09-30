@@ -13,7 +13,7 @@ import Lander from './Lander';
 import Menu from './Menu';
 import QuakeInfo from './QuakeInfo';
 import loader from '../assets/loader.gif';
-import Legend from './Legend'
+import Legend from './Legend';
 
 import '../styles/Space.scss';
 
@@ -28,12 +28,12 @@ function Space() {
   const [quake, setQuake] = useState([]);
 
   const landerLocation = [
-    [1, 23],
-    [-3, -23],
-    [-3, -17],
-    [26, 4],
-    [-9, 16],
-    [20, 31],
+    [1, 23, 11],
+    [-3, -23, 12],
+    [-3, -17, 14],
+    [26, 4, 15],
+    [-9, 16, 16],
+    [20, 31, 17],
   ];
 
   return (
@@ -56,12 +56,12 @@ function Space() {
             <directionalLight position={[0, 0, 100]} intensity={directionalLightIntensity / 100} angle={-0.3} />
             <BackGround />
             {moon === true ? <Moon heightMap={heightMap} /> : <></>}
-            {wireframe && <Wireframe /> }
+            {wireframe && <Wireframe />}
             <AxesHelper axes={axes} />
             <Sun />
             {apolloLanders &&
               landerLocation.map((lander, index) => {
-                return <Lander key={index} lat={lander[0]} long={lander[1]} />;
+                return <Lander key={index} lat={lander[0]} long={lander[1]} num={lander[2]} />;
               })}
             <Wave quake={quake} />
           </Canvas>
@@ -86,7 +86,7 @@ function Space() {
         setQuake={setQuake}
       />
       <QuakeInfo quake={quake} />
-      { heightMap &&<Legend />}
+      {heightMap && <Legend />}
     </>
   );
 }
