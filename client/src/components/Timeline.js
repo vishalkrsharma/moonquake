@@ -86,7 +86,6 @@ function Timeline(props) {
               6 * Math.sin(Math.PI / 2 - degToRad(quake.latitude)) * Math.cos(degToRad(quake.longitude)),
             ]);
           }}
-          style={{ marginLeft: '10rem', zIndex: '100' }}
         >
           Move Cam
         </div>
