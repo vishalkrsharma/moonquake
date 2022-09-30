@@ -13,16 +13,14 @@ export default function Wave(props) {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    actions.wave.play();
+    actions.KeyAction.play();
   });
 
   useFrame(() => {
     group.current.lookAt(0, 0, 0);
   }, []);
 
-  const r = 1.99;
-
-  // 0.6 3.2
+  const r = 1.97;
 
   const degToRad = (deg) => (deg * Math.PI) / 180.0;
 
@@ -40,10 +38,10 @@ export default function Wave(props) {
         <mesh
           name='Icosphere'
           geometry={nodes.Icosphere.geometry}
-          material={materials['Material.005']}
+          material={materials['Material.003']}
           morphTargetDictionary={nodes.Icosphere.morphTargetDictionary}
           morphTargetInfluences={nodes.Icosphere.morphTargetInfluences}
-          scale={.1*quake.magnitude}
+          scale={(quake.magnitude < 1.5 ? 0.15 : 0.1) * quake.magnitude}
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
