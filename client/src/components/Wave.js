@@ -20,7 +20,7 @@ export default function Wave(props) {
     group.current.lookAt(0, 0, 0);
   }, []);
 
-  const r = 1.97;
+  const r = quake.magnitude < 1 ? 1.99 : 1.97;
 
   const degToRad = (deg) => (deg * Math.PI) / 180.0;
 

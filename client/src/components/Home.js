@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -8,6 +8,8 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 
 function Home() {
+  const [about, setAbout] = useState(true);
+
   return (
     <div className='home'>
       <div className='div'>
@@ -21,7 +23,7 @@ function Home() {
           </Suspense>
         </Canvas>
       </div>
-      <Navbar />
+      <Navbar about={about} setAbout={setAbout} />
       <Hero />
     </div>
   );

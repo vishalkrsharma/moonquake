@@ -14,9 +14,6 @@ function Hero() {
         <Link to='/model' className='hero__links__link'>
           &lt;Visit Moon&gt;
         </Link>
-        {/* <Link to='/about' className='links__btn'>
-          About Us
-        </Link> */}
       </div>
     </div>
   );
