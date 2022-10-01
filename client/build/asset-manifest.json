@@ -1,24 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.cdba9f33.css",
-    "main.js": "/static/js/main.e78c803c.js",
+    "main.css": "/static/css/main.b570cb0d.css",
+    "main.js": "/static/js/main.09761471.js",
     "static/media/moon.jpg": "/static/media/moon.510250a2fc36d1d7da9f.jpg",
     "static/media/height.jpg": "/static/media/height.9b7b01de4ca39295e619.jpg",
     "static/media/sun.jpg": "/static/media/sun.fdc867e9d2bad06fd47e.jpg",
+    "static/media/vishal.jpg": "/static/media/vishal.168f21c6fbc22da6197d.jpg",
     "static/media/loader.gif": "/static/media/loader.cca544e74ccc73e63ebd.gif",
+    "static/media/arkadeep.jpeg": "/static/media/arkadeep.3b5b46f6c9ae12c606fc.jpeg",
+    "static/media/soham.jpg": "/static/media/soham.6d58602395dc49c69c29.jpg",
     "static/media/roboto-mono-all-400-normal.woff": "/static/media/roboto-mono-all-400-normal.615f3bbd43698e99d078.woff",
     "static/media/roboto-mono-cyrillic-ext-400-normal.woff2": "/static/media/roboto-mono-cyrillic-ext-400-normal.13c026e0294440303c69.woff2",
     "static/media/roboto-mono-latin-400-normal.woff2": "/static/media/roboto-mono-latin-400-normal.d3026ee29728abffa752.woff2",
+    "static/media/maaz.jpeg": "/static/media/maaz.deb256adf9cff8e875cc.jpeg",
     "static/media/roboto-mono-latin-ext-400-normal.woff2": "/static/media/roboto-mono-latin-ext-400-normal.22aea4e27b4b7405853a.woff2",
     "static/media/roboto-mono-cyrillic-400-normal.woff2": "/static/media/roboto-mono-cyrillic-400-normal.a0d40ee5847af8bed2df.woff2",
     "static/media/roboto-mono-greek-400-normal.woff2": "/static/media/roboto-mono-greek-400-normal.95e7a382e12921ef32ee.woff2",
     "static/media/roboto-mono-vietnamese-400-normal.woff2": "/static/media/roboto-mono-vietnamese-400-normal.a9575edb558363648d81.woff2",
     "index.html": "/index.html",
-    "main.cdba9f33.css.map": "/static/css/main.cdba9f33.css.map",
-    "main.e78c803c.js.map": "/static/js/main.e78c803c.js.map"
+    "main.b570cb0d.css.map": "/static/css/main.b570cb0d.css.map",
+    "main.09761471.js.map": "/static/js/main.09761471.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdba9f33.css",
-    "static/js/main.e78c803c.js"
+    "static/css/main.b570cb0d.css",
+    "static/js/main.09761471.js"
   ]
 }

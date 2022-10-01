@@ -5,8 +5,6 @@ import Timeline from './Timeline';
 
 function Menu(props) {
   const {
-    moon,
-    setMoon,
     axes,
     setAxes,
     directionalLightIntensity,
@@ -30,19 +28,6 @@ function Menu(props) {
     <div className='menu'>
       <table className='table table__1'>
         <tbody>
-          <tr>
-            <td className='td__info'>Moon</td>
-            <td>
-              <button
-                className='btn'
-                onClick={() => {
-                  setMoon(!moon);
-                }}
-              >
-                {moon === true ? 'On' : 'Off'}
-              </button>
-            </td>
-          </tr>
           <tr>
             <td className='td__info'>
               World Axes

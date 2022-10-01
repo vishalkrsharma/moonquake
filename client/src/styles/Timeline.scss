@@ -12,7 +12,7 @@
   }
 
   position: absolute;
-  top: 39.25rem;
+  top: 35.75rem;
   left: 0;
   color: #ffffff;
   display: flex;
@@ -28,7 +28,7 @@
     text-decoration: underline;
   }
   position: absolute;
-  top: 43.25rem;
+  top: 39.75rem;
   color: #ffffff;
   text-decoration: none;
   border: 1px solid #ffffff;
@@ -37,17 +37,20 @@
 
 @-moz-document url-prefix() {
   .timeline {
-    top: 41.5rem;
+    top: 38rem;
   }
   .fpBtn {
-    top: 45.5rem;
+    top: 42.25rem;
   }
-  .mop {
+  .apply {
     padding: 0.5rem 1rem;
   }
 }
 
-.mop {
-  border: 1px solid #ffffff;
-  padding: 0.9rem 1rem;
+.apply {
+  padding: 0.6rem 0.5rem;
+  width: 8rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 0.5rem;
 }

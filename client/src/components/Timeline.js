@@ -70,8 +70,8 @@ function Timeline(props) {
             );
           })}
         </select>
-        <div
-          className='mop'
+        <button
+          className='apply'
           onClick={() => {
             console.log('click');
             setCamera([
@@ -81,8 +81,8 @@ function Timeline(props) {
             ]);
           }}
         >
-          Move Cam
-        </div>
+          Apply
+        </button>
       </div>
       <a target='_blank' rel='noreferrer' className='fpBtn' href='https://cucumburr.itch.io/moonquake-simulator'>
         View in First Person!
